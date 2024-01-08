@@ -3,4 +3,6 @@
   imports = [
     ./bufferline.nix
   ];
+
+  colorschemes.catppuccin.enable = true;
 }
