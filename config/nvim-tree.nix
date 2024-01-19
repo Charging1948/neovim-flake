@@ -5,7 +5,7 @@
   keymaps = [
     {
       key="<leader>fc";
-      action="<cmd>NvimTreeFocus<CR>";
+      action="<cmd>:NvimTreeFocus<CR>";
       mode=["n"];
     }
   ];

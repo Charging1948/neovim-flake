@@ -16,8 +16,9 @@
   colorschemes.catppuccin.enable = true;
   plugins.treesitter.enable = true;
   plugins.which-key.enable = true;
+  plugins.none-ls.enable = true;
   globals = {
-    mapleader = "";
-    maplocalleader = "";
+    mapleader = " ";
+    maplocalleader = " ";
   };
 }
