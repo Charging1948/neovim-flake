@@ -3,6 +3,11 @@
     enable = true;
   };
   plugins.lsp-format.enable = true;
+  plugins.lspsaga.enable = true;
+  plugins.lspkind = {
+    enable = true;
+    cmp.enable = true;
+  };
   plugins.lsp.servers = {
     astro.enable = true;
     bashls.enable = true;
