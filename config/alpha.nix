@@ -29,14 +29,14 @@
         type = "group";
         val = [
           {
-            command = "<CMD>ene <CR>";
-            desc = "  New file";
+            command = "<CMD>ene<CR>";
+            desc = " New file";
             shortcut = "e";
           }
           {
             command = ":qa<CR>";
-            desc = "  Quit Neovim";
-            shortcut = "SPC q";
+            desc = "Quit Neovim";
+            shortcut = "<leader>q";
           }
         ];
       }
