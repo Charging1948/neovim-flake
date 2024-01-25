@@ -28,26 +28,26 @@
       {
         type = "group";
         val = [
-          {
-            command = "<CMD>ene<CR>";
-            desc = " New file";
-            shortcut = "e";
-          }
+          # {
+          #   command = "<CMD>ene<CR>";
+          #   desc = " New file";
+          #   shortcut = "e";
+          # }
           {
             type = "button";
             val = "  Find text";
             on_press.raw = "require('telescope.builtin').live_grep";
 
             opts = {
-              keymap = ["n" "g" ":Telescope live_grep <CR>" {noremap = true; silent = true; nowait = true;}];
+              keymap = [ "n" "g" ":Telescope live_grep <CR>" { noremap = true; silent = true; nowait = true; } ];
               shortcut = "g";
             };
           }
-          {
-            command = ":qa<CR>";
-            desc = "Quit Neovim";
-            shortcut = "<leader>q";
-          }
+          # {
+          #   command = ":qa<CR>";
+          #   desc = "Quit Neovim";
+          #   shortcut = "<leader>q";
+          # }
           {
             type = "button";
             val = "<DESC>";
@@ -55,7 +55,7 @@
             on_press.raw = "funcion() vim.cmd[[:qa<CR>]] end";
 
             opts = {
-              keymap = ["n" "<SC>" "<COMMAND>" {noremap = true; silent = true; nowait = true;}];
+              keymap = [ "n" "<SC>" "<COMMAND>" { noremap = true; silent = true; nowait = true; } ];
               shortcut = "<SC>";
 
               # Feel free to customize (or omit) those
