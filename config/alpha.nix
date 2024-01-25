@@ -1,3 +1,12 @@
+let
+  def-opts = {
+    position = "center";
+    cursor = 3;
+    width = 50;
+    align_shortcut = "right";
+    hl_shortcut = "Keyword";
+  };
+in
 {
   plugins.alpha = {
     enable = true;
@@ -26,6 +35,10 @@
         val = 2;
       }
       {
+        opts = {
+          # hl = "Keyword";
+          position = "center";
+        };
         type = "group";
         val = [
           # {
@@ -35,13 +48,13 @@
           # }
           {
             type = "button";
-            val = "  Find text";
+            val = "   Find text";
             on_press.raw = "require('telescope.builtin').live_grep";
 
             opts = {
               keymap = [ "n" "g" ":Telescope live_grep <CR>" { noremap = true; silent = true; nowait = true; } ];
               shortcut = "g";
-            };
+            } // def-opts;
           }
           # {
           #   command = ":qa<CR>";
@@ -57,14 +70,7 @@
             opts = {
               keymap = [ "n" "<SC>" "<COMMAND>" { noremap = true; silent = true; nowait = true; } ];
               shortcut = "<SC>";
-
-              # Feel free to customize (or omit) those
-              # position = "center";
-              # cursor = 3;
-              # width = 50;
-              # align_shortcut = "right";
-              # hl_shortcut = "Keyword";
-            };
+            } // def-opts;
           }
         ];
       }
