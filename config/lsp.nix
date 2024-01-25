@@ -28,6 +28,7 @@
       ltex.settings.enabled = ["bibtex" "context" "context.tex" "html" "latex" "markdown" "org" "restructuredtext" "rsweave" "neorg"];
       lua-ls.enable = true;
       nil_ls.enable = true;
+      rnix-lsp.enable = true;
       prismals.enable = true;
       pylsp.enable = true;
       rust-analyzer.enable = true;
