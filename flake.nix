@@ -13,6 +13,7 @@
     ...
   } @ inputs: let
     config = import ./config; # import the module directly
+
   in
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = [
@@ -23,10 +24,20 @@
       ];
 
       perSystem = {
-        pkgs,
         system,
         ...
       }: let
+        pkgs = import inputs.nixpkgs {
+          inherit system;
+          overlays = [
+            (final: prev: {
+              neovim = prev.neovim.overrideAttrs (oldAttrs: {
+                buildInputs = oldAttrs.buildInputs ++ [ prev.ripgrep prev.fd ];
+              });
+            })
+          ];
+          config = { };
+        };
         nixvimLib = nixvim.lib.${system};
         nixvim' = nixvim.legacyPackages.${system};
         nvim = nixvim'.makeNixvimWithModule {
